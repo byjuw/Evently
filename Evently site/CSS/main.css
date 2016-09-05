@@ -1,0 +1,28 @@
+/*body {
+	background-image: radial-gradient(#d17171 0%, #590000 100%);
+	background-repeat: no-repeat;
+}*/
+
+#logo_blanc{
+	max-height: 35px;
+	display: inline;
+}
+
+nav li{
+	display: inline;
+	list-style: none;
+	padding: 15px;
+}
+
+nav ul{
+	display: inline;
+}
+
+#menu_membre{
+	display: inline;
+	right: 0px;
+}
+
+h1 {
+	display: inline;
+}
