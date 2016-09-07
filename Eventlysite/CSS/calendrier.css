@@ -1,0 +1,29 @@
+.semaine div {
+	width: 150px;
+	display: inline-block;
+}
+
+#firstSemaine {
+	margin-left: 15px;
+}
+
+span {
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	background-color: #424242;
+	color: white;
+}
+
+#aujour {
+	background-color: red;
+}
+
+.journee {
+	height: 100px;
+	background-color: #d5d5d5;
+}
+
+.jour {
+	margin: 0 5px;	
+}

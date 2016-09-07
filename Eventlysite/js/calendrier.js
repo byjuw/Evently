@@ -21,7 +21,7 @@ function calendrier()
         dep_j=setDate(0);
     }
     dep_j = dep_j.getDay();
-    document.write('<div id="calendrier"><div><div class="row">'+date_aujourdui+'</div></div><div class="row semaine">');
+    document.write('<div id="calendrier"><div><div class="row">'+date_aujourdui+'</div></div><div id="firstSemaine" class="row semaine">');
     // document.write('<div class="row jourSemaine semaine"><div>Lundi</div><div>Mardi</div><div>Mercredi</div><div>Jeudi</div><div>Vendredi</div><div>Samedi</div><div>Dimanche</div></div>');
     sem = 0;
     for(i=2;i<=dep_j;i++)
@@ -38,11 +38,11 @@ function calendrier()
         }
         if(jour==i)
         {
-            document.write('<div id="aujour">'+ jours_semaine[(i+2)%7] +' ' +i+'<div class="journee"></div></div>');
+            document.write('<div class="jour"><span id="aujour">'+ jours_semaine[(i+2)%7] + ' ' + i +'</span><div class="journee"></div></div>');
         }
         else
         {
-            document.write('<div>'+ jours_semaine[(i+2)%7] + i+'<div class="journee"></div></div>');
+            document.write('<div class="jour"><span>'+ jours_semaine[(i+2)%7] + ' ' + i +'</span><div class="journee"></div></div>');
         }
         sem++;
         if(sem==7)
