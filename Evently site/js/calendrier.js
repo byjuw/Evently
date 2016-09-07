@@ -7,6 +7,7 @@ function calendrier()
     
     mois = new Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
     jours_dans_moi = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+    jours_semaine = new Array('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche');
     if(annee%4 == 0 && annee!=1900)
     {
         jours_dans_moi[1]=29;
@@ -20,45 +21,45 @@ function calendrier()
         dep_j=setDate(0);
     }
     dep_j = dep_j.getDay();
-    document.write('<table id="calendrier"><tbody id="cal_body"><tr><th colspan="7">'+date_aujourdui+'</th></tr>');
-    document.write('<tr class="jourSemaine"><th>Lundi</th><th>Mardi</th><th>Mercredi</th><th>Jeudi</th><th>Vendredi</th><th>Samedi</th><th>Dimanche</th></tr><tr>');
+    document.write('<div id="calendrier"><div><div class="row">'+date_aujourdui+'</div></div><div class="row semaine">');
+    // document.write('<div class="row jourSemaine semaine"><div>Lundi</div><div>Mardi</div><div>Mercredi</div><div>Jeudi</div><div>Vendredi</div><div>Samedi</div><div>Dimanche</div></div>');
     sem = 0;
     for(i=2;i<=dep_j;i++)
     {
-        document.write('<td class="moisPrecedent">'+(jours_dans_moi[moi-1]-dep_j+i)+'</td>');
+        document.write('<div class="moisPrecedent"></div>');
+        // + jours_semaine[(i-2)%7] + (jours_dans_moi[moi-1]-dep_j+i)+
         sem++;
     }
     for(i=1;i<=total;i++)
     {
         if(sem==0)
         {
-            document.write('<tr>');
+            document.write('<div class="row semaine">');
         }
         if(jour==i)
         {
-            document.write('<td id="aujour">'+i+'</td>');
+            document.write('<div id="aujour">'+ jours_semaine[(i+2)%7] +' ' +i+'<div class="journee"></div></div>');
         }
         else
         {
-            document.write('<td>'+i+'</td>');
+            document.write('<div>'+ jours_semaine[(i+2)%7] + i+'<div class="journee"></div></div>');
         }
         sem++;
         if(sem==7)
         {
-            document.write('</tr>');
+            document.write('</div>');
             sem=0;
         }
     }
     for(i=1;sem!=0;i++)
     {
-        document.write('<td class="moisPrecedent">'+i+'</td>');
+        // document.write('<div class="moisSuivant">'+ jours_semaine[(i+4)%7] + i+'</div>');
         sem++;
         if(sem==7)
         {
-            document.write('</tr>');
+            document.write('</div>');
             sem=0;
         }
     }
-    document.write('</tbody></table>');
     return true;
 }

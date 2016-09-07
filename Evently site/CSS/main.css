@@ -1,11 +1,18 @@
-/*body {
-	background-image: radial-gradient(#d17171 0%, #590000 100%);
-	background-repeat: no-repeat;
-}*/
+html, body {
+	height: 100%;
+}
 
 #logo_blanc{
-	max-height: 35px;
+	max-height: 36px;
 	display: inline;
+	margin: 7px 0 7px 20px;
+}
+
+nav {
+	/*background-color: #424242;*/
+	background: linear-gradient(to bottom, #424242 75%,#303030 100%);
+	margin: 0 !important;
+	/*border-bottom: 1px solid white !important;*/
 }
 
 nav li{
@@ -14,15 +21,23 @@ nav li{
 	padding: 15px;
 }
 
+nav li .glyphicon {
+	margin-right: 10px;
+}
+
 nav ul{
 	display: inline;
 }
 
 #menu_membre{
-	display: inline;
-	right: 0px;
+	display: inline-block;
+	float: right;
+	margin: 15px 25px 0 0;
+	color: white;
 }
 
-h1 {
-	display: inline;
+#blocPage {
+	background-image: radial-gradient(#d17171 0%, #590000 100%);
+	background-repeat: no-repeat;
+	height: 100%;
 }

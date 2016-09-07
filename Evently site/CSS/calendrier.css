@@ -1,28 +1,14 @@
-#calendrier {
-    border:1px solid black;
-    padding:1px;
-    background-color:#4594ff;
-    margin:auto;
-    table-layout: fixed;
-}
-
-#calendrier th {
-    border:1px solid black;
-    background-color:#ffffff;
-}
-
-#calendrier td {
-    border:1px solid black;
-    background-color:#ffffff;
-    text-align:center;
-    width: 200px;
-    height: 150px;
+.semaine div {
+	width: 150px;
+	display: inline-block;
+	margin: 5px;
 }
 
 #aujour {
-    color:#ff0000;
+	background-color: red;
 }
 
-.moisPrecedent {
-    color:#5a779e;
+.journee {
+	height: 100px;
+	background-color: #424242;
 }
