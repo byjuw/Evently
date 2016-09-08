@@ -36,7 +36,11 @@ nav ul{
 	color: white;
 }
 
-#blocPage {
+#calendrier {
+	margin-top: 142px;
+}
+
+body {
 	background-image: radial-gradient(#d17171 0%, #590000 100%);
 	background-repeat: no-repeat;
 	height: 100%;

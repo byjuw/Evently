@@ -1,5 +1,5 @@
 .semaine div {
-	width: 150px;
+	width: 157px;
 	display: inline-block;
 }
 
@@ -25,5 +25,5 @@ span {
 }
 
 .jour {
-	margin: 0 5px;	
+	margin: 0 5px 10px 5px;
 }
