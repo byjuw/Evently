@@ -4,7 +4,7 @@
 }
 
 #firstSemaine {
-	margin-left: 15px;
+	/*margin-left: 15px;*/
 }
 
 span {
@@ -15,8 +15,13 @@ span {
 	color: white;
 }
 
+
+#calendrier {
+	margin-top: 80px;
+}
+
 #aujour {
-	background-color: red;
+	background-color: #e41720;
 }
 
 .journee {
@@ -24,6 +29,11 @@ span {
 	background-color: #d5d5d5;
 }
 
-.jour {
+.jour, .moisPrecedent {
 	margin: 0 5px 10px 5px;
+}
+
+h1 {
+	text-align: center;
+	margin: 0 0 30px !important;
 }
