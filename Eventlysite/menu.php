@@ -4,6 +4,7 @@
     	<ul>
     		<li>Messages</li>
     		<li>Notifications</li>
+    		<li>Proute</li>
     		<li>Utilisateurs</li>
     	</ul>
     </div>
