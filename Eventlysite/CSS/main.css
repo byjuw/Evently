@@ -9,10 +9,9 @@ html, body {
 }
 
 nav {
-	/*background-color: #424242;*/
-	background: linear-gradient(to bottom, #424242 75%,#303030 100%);
+	background-color: #424242;
+	/*background: linear-gradient(to bottom, #424242 75%,#303030 100%);*/
 	margin: 0 !important;
-	/*border-bottom: 1px solid white !important;*/
 }
 
 nav li{
@@ -38,7 +37,7 @@ nav ul{
 
 body {
 	/*background-image: radial-gradient(#d17171 0%, #7a3232 100%);*/
-	background: #e8e8e8 !important;
+	background: #f1f1f1 !important;
 	background-repeat: no-repeat;
 	height: 100%;
 }
