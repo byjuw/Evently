@@ -41,14 +41,15 @@ nav ul{
 }
 
 body {
-	background-image: radial-gradient(#d17171 0%, #7a3232 100%);
+	/*background-image: radial-gradient(#d17171 0%, #7a3232 100%);*/
+	background: #e8e8e8 !important;
 	background-repeat: no-repeat;
 	height: 100%;
 }
 
-.fondblanc {
+/*.fondblanc {
 	background-color: rgba(255,255,255,0.21);
 	width: 1230px;
 	margin: auto;
 	padding-bottom: 20px;
-}
+}*/

@@ -14,6 +14,5 @@
 	include("menu.php");
 	include("calendrier.html"); 
 ?>
-
 </body>
 </html>
