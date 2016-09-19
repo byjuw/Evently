@@ -1,9 +1,17 @@
-function calendrier()
+function moisG(parmois)
 {
     var date = new Date();
     var jour = date.getDate(); //Récupérer la date Jour
     var moi = date.getMonth(); //Récupérer la date Mois
     var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
+
+    if (parmois != null) {
+        changeMois = moi + parmois
+        var date = new Date(annee, changeMois);
+        var jour = date.getDate(); //Récupérer la date Jour
+        var moi = date.getMonth(); //Récupérer la date Mois
+        var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
+    }
     
     mois = new Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'); //Tab contenant les mois
     jours_dans_moi = new Array(31,28,31,30,31,30,31,31,30,31,30,31); // Tab contenant le nombre de jour
