@@ -1,6 +1,6 @@
 function calendrier()
 {
-    var date = new Date();
+    var date = new Date(2012,05,09);
     var jour = date.getDate(); //Récupérer la date Jour
     var moi = date.getMonth(); //Récupérer la date Mois
     var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
@@ -21,7 +21,7 @@ function calendrier()
     {
         cpt_j=7; //(cpt_j-1)%7 donne -1 quand cpt_1==0 donc on lui rajoute 7 pour remplacer -1 par 6 pour afficher les dimanches
     }
-    document.write('<div id="calendrier"><div id="titreCalendrier"><h1><span class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true"></span>'+ moisAn +'<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true"></span></h1></div>');
+    document.write('<div id="calendrier"><div><div class="row"><h1>'+ moisAn +'</h1></div></div><div id="firstSemaine" class="row semaine">');
     // document.write('<div class="row jourSemaine semaine"><div>Lundi</div><div>Mardi</div><div>Mercredi</div><div>Jeudi</div><div>Vendredi</div><div>Samedi</div><div>Dimanche</div></div>');
     sem = 0;
     for(i=2;i<=cpt_j;i++)
