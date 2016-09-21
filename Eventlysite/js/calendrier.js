@@ -1,6 +1,6 @@
 function calendrier()
 {
-    var date = new Date(2012,05,09);
+    var date = new Date();
     var jour = date.getDate(); //Récupérer la date Jour
     var moi = date.getMonth(); //Récupérer la date Mois
     var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
@@ -13,7 +13,7 @@ function calendrier()
         jours_dans_moi[1]=29; // Si annee bissextile vrai, 2em mois a 29 jours
     }
     var nbJourMois = jours_dans_moi[moi]; // var contenant le nb de jour du mois en cours
-    var moisAn = mois[moi]+' '+annee; //var contenant la date d'aujoud'hui entière
+    // var moisAn = mois[moi]+' '+annee; //var contenant la date d'aujoud'hui entière
     cpt_j = date;
     cpt_j.setDate(1);
     cpt_j = cpt_j.getDay();
@@ -21,13 +21,11 @@ function calendrier()
     {
         cpt_j=7; //(cpt_j-1)%7 donne -1 quand cpt_1==0 donc on lui rajoute 7 pour remplacer -1 par 6 pour afficher les dimanches
     }
-    document.write('<div id="calendrier"><div><div class="row"><h1>'+ moisAn +'</h1></div></div><div id="firstSemaine" class="row semaine">');
-    // document.write('<div class="row jourSemaine semaine"><div>Lundi</div><div>Mardi</div><div>Mercredi</div><div>Jeudi</div><div>Vendredi</div><div>Samedi</div><div>Dimanche</div></div>');
+    // document.write('<div id="calendrier"><div id="titreCalendrier"><h1><span id="moisG" class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true"></span>'+ moisAn +'<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true"></span></h1></div>');
     sem = 0;
     for(i=2;i<=cpt_j;i++)
     {
         document.write('<div class="moisPrecedent"> </div>');
-        // + jours_semaine[(i-2)%7] + (jours_dans_moi[moi-1]-cpt_j+i)+
         sem++;
     }
     for(i=1;i<=nbJourMois;i++)
@@ -44,7 +42,7 @@ function calendrier()
         {
             document.write('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'</span><div class="journee"></div></div>');
         }
-        sem++;
+        sem++;  
         if(sem==7)
         {
             document.write('</div>');
@@ -54,7 +52,6 @@ function calendrier()
     }
     for(i=1;sem!=0;i++)
     {
-        // document.write('<div class="moisSuivant">'+ jours_semaine[(i+4)%7] + i+'</div>');
         sem++;
         if(sem==7)
         {

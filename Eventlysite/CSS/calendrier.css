@@ -1,40 +1,63 @@
-.semaine div {	
-	width: 157px;
-	display: inline-block;
+.container {
+	width: 1171px !important;
 }
 
-#firstSemaine {
-	/*margin-left: 15px;*/
+.jour, .moisPrecedent {
+	width: 159px;
+	display: inline-block;
+	margin: 2px;
 }
 
 span {
 	width: 100%;
 	display: inline-block;
 	text-align: center;
-	background-color: #424242;
-	color: white;
+	background-color: #4a4a4a;
+	color: #dadada;
 }
 
+.lienNavMois {
+}
+
+.navMois {
+	width: 50px;
+	display: inline-block;
+	color: #dadada;
+	margin: 0 60px;
+	top: 5px !important;
+}
+
+.navMois:hover {
+	cursor: pointer;
+}
 
 #calendrier {
 	margin-top: 80px;
 }
 
+#titreCalendrier {
+	background-color: #4a4a4a;
+	text-align: center;
+	border-radius: 10px;
+	overflow: hidden;
+	padding-bottom: 5px;
+	margin: 0 0 30px !important;
+}
+
 #aujour {
 	background-color: #e41720;
+	color: #f1f1f1;
 }
 
 .journee {
 	height: 105px;
-	background-color: #d5d5d5;
-}
-
-.jour, .moisPrecedent {
-	margin: 0 2px 0 2px;
+	background-color: #fff;
 }
 
 .jour {
 	height: 125px;
+	border-radius: 10px;
+	overflow: hidden;
 }
 
 .jour:hover {
@@ -43,9 +66,10 @@ span {
 
 h1 {
 	text-align: center;
-	margin: 0 0 30px !important;
+	color: #dadada !important;
+	margin: 0 !important;
 }
 
 .row {
-	margin: 0;
+	margin: 0 !important;
 }
