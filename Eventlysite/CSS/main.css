@@ -24,8 +24,11 @@ nav li .glyphicon {
 	margin-right: 10px;
 }
 
-nav ul{
-	display: inline;
+nav ul.nav.navbar-nav li a{
+	color:#fff;
+}
+nav ul.nav.navbar-nav li a:hover{
+	color:#4a4a4a;
 }
 
 #menu_membre{
