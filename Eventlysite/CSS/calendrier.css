@@ -8,12 +8,29 @@
 	margin: 2px;
 }
 
-span {
+.jour span {
 	width: 100%;
 	display: inline-block;
 	text-align: center;
 	background-color: #4a4a4a;
 	color: #dadada;
+	height: 30px;
+	padding-top: 5px;
+	position: relative;
+}
+.jour span a.ajouterEvenement{
+	display: block;
+	position: absolute;
+	right:0;
+	top: 0;
+	width: 30px;
+	height: 30px;
+	margin-left: -15px;
+	font-size: 20px;
+	padding-top: 2px;
+	font-weight: bolder;
+	text-decoration: none;
+	color:#fff;
 }
 
 .lienNavMois {

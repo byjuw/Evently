@@ -36,11 +36,11 @@ function calendrier()
         }
         if(jour==i)
         {
-            document.write('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'</span><div class="journee"></div></div>');
+            document.write('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
         }
         else
         {
-            document.write('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'</span><div class="journee"></div></div>');
+            document.write('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
         }
         sem++;  
         if(sem==7)
