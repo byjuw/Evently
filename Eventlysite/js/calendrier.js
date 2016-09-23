@@ -1,9 +1,20 @@
-function calendrier()
+var index = 0;
+
+function calendrier(index)
 {
+
     var date = new Date();
     var jour = date.getDate(); //Récupérer la date Jour
     var moi = date.getMonth(); //Récupérer la date Mois
     var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
+    var bodyCalendrier = "";
+
+    if (index != 0) {
+        var changeMois = moi + index;
+        var date = new Date(annee, changeMois);
+        var moi = date.getMonth(); //Récupérer la date Mois
+        var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
+    }
     
     mois = new Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'); //Tab contenant les mois
     jours_dans_moi = new Array(31,28,31,30,31,30,31,31,30,31,30,31); // Tab contenant le nombre de jour
@@ -13,7 +24,7 @@ function calendrier()
         jours_dans_moi[1]=29; // Si annee bissextile vrai, 2em mois a 29 jours
     }
     var nbJourMois = jours_dans_moi[moi]; // var contenant le nb de jour du mois en cours
-    // var moisAn = mois[moi]+' '+annee; //var contenant la date d'aujoud'hui entière
+    var moisAn = mois[moi]+' '+annee; //var contenant la date d'aujoud'hui entière
     cpt_j = date;
     cpt_j.setDate(1);
     cpt_j = cpt_j.getDay();
@@ -21,31 +32,31 @@ function calendrier()
     {
         cpt_j=7; //(cpt_j-1)%7 donne -1 quand cpt_1==0 donc on lui rajoute 7 pour remplacer -1 par 6 pour afficher les dimanches
     }
-    // document.write('<div id="calendrier"><div id="titreCalendrier"><h1><span id="moisG" class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true"></span>'+ moisAn +'<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true"></span></h1></div>');
+    
     sem = 0;
     for(i=2;i<=cpt_j;i++)
     {
-        document.write('<div class="moisPrecedent"> </div>');
+        bodyCalendrier = bodyCalendrier + ('<div class="moisPrecedent"> </div>');
         sem++;
     }
     for(i=1;i<=nbJourMois;i++)
     {
         if(sem==0)
         {
-            document.write('<div class="row semaine">');
+            bodyCalendrier = bodyCalendrier + ('<div class="row semaine">');
         }
-        if(jour==i)
+        if(jour==i && index==0)
         {
-            document.write('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
+            bodyCalendrier = bodyCalendrier + ('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
         }
         else
         {
-            document.write('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
+            bodyCalendrier = bodyCalendrier + ('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
         }
         sem++;  
         if(sem==7)
         {
-            document.write('</div>');
+            bodyCalendrier = bodyCalendrier + ('</div>');
             sem=0;
         }
     cpt_j++;
@@ -55,9 +66,14 @@ function calendrier()
         sem++;
         if(sem==7)
         {
-            document.write('</div>');
+            bodyCalendrier = bodyCalendrier + ('</div>');
             sem=0;
         }
     }
+    var divTitre = document.getElementById('moisAn');
+    divTitre.innerHTML = moisAn;
+
+    var divBody = document.getElementById('bodyCalendrier');
+    divBody.innerHTML = bodyCalendrier;
     return true;
 }

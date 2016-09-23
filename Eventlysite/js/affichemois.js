@@ -5,5 +5,6 @@ function affichemois()
 	var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
 	mois = new Array('Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre');
 	var moisAn = mois[moi] + '' + annee; 
-	document.write(moisAn);
+	// document.write(moisAn);
+	return moisAn;
 }

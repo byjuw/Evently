@@ -1,10 +1,12 @@
 <div class="container">
 	<div id="calendrier">
 		<div id="titreCalendrier">
-			<h1><span id="moisG" class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="affichemois();moisG(-1)"></span>
-			<script type="text/javascript">affichemois()</script><span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true"></span></h1>
+			<h1><span id="moisG" class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="index--;calendrier(index);"></span><span id="moisAn"></span>
+			<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span></h1>
 		</div>
-		    <script type="text/javascript">calendrier()</script>
+    <div id="bodyCalendrier">
+		  <script type="text/javascript">calendrier(0)</script>
+    </div>
 		<!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
@@ -17,17 +19,17 @@
               <div class="modal-body">
             <div class="form-group">
               <label for="name">Nom</label>
-                <input type="text" class="form-control" id="name" placeholder="Entré un nom de l'évènement">
+                <input type="text" class="form-control" id="name" placeholder="Entrez le nom de l'évènement">
             </div>
 
             <div class="form-group">
               <label for="lieu">Lieu</label>
-                <input type="text" class="form-control" id="lieu" placeholder="Entrer un endroit">
+                <input type="text" class="form-control" id="lieu" placeholder="Entrez le lieu">
             </div>
 
             <div class="form-group">
               <label for="datetime">Heure de début / Heure de fin</label>
-                <input type="text" class="form-control" id="datetime" placeholder="Exemple: 12:42 // 16/42">
+                <input type="text" class="form-control" id="datetime" placeholder="Exemple: 12:42 // 16:42">
             </div>
 
             <div class="form-group">
@@ -37,7 +39,7 @@
 
               <div class="form-group">
               <label for="organisme">Organisme organisateur</label>
-                <input type="text" class="form-control" id="organisme" placeholder="Entré un nom d'organisme-entreprise organisateur">
+                <input type="text" class="form-control" id="organisme" placeholder="Entrez un nom d'organisme-entreprise organisateur">
             </div>
 
             <div class="form-group">
