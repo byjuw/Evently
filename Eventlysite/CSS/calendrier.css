@@ -33,9 +33,6 @@
 	color:#fff;
 }
 
-.lienNavMois {
-}
-
 .navMois {
 	width: 50px;
 	display: inline-block;
@@ -44,8 +41,13 @@
 	top: 5px !important;
 }
 
-.navMois:hover {
+.navMois, #moisAn {
 	cursor: pointer;
+}
+
+#moisAn {
+	display: inline-block;
+	width: 400px;
 }
 
 #calendrier {
@@ -54,7 +56,6 @@
 
 #titreCalendrier {
 	background-color: #4a4a4a;
-	text-align: center;
 	border-radius: 10px;
 	overflow: hidden;
 	padding-bottom: 5px;

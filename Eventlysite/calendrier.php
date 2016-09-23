@@ -1,8 +1,11 @@
 <div class="container">
 	<div id="calendrier">
 		<div id="titreCalendrier">
-			<h1><span id="moisG" class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="index--;calendrier(index);"></span><span id="moisAn"></span>
-			<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span></h1>
+			<h1>
+        <span class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="index--;calendrier(index);"></span>
+        <span id="moisAn" onclick="index=0;calendrier(index);"></span>
+  			<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span>
+      </h1>
 		</div>
     <div id="bodyCalendrier">
 		  <script type="text/javascript">calendrier(0)</script>
@@ -69,5 +72,5 @@
             </form>
           </div>
         </div>
-      </div>
-    </div>
+  </div>
+</div>

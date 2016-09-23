@@ -1,6 +1,6 @@
 var index = 0;
 
-function calendrier(index)
+function calendrier(index) // index = paramètre pour la navigation de mois en mois dans le calendrier.
 {
 
     var date = new Date();
@@ -9,7 +9,7 @@ function calendrier(index)
     var annee = date.getFullYear(); //Récupérer la date Annee avec 4 chiffres
     var bodyCalendrier = "";
 
-    if (index != 0) {
+    if (index != 0) { // Permet la navigation de mois en mois dans le calendrier.
         var changeMois = moi + index;
         var date = new Date(annee, changeMois);
         var moi = date.getMonth(); //Récupérer la date Mois
@@ -36,7 +36,7 @@ function calendrier(index)
     sem = 0;
     for(i=2;i<=cpt_j;i++)
     {
-        bodyCalendrier = bodyCalendrier + ('<div class="moisPrecedent"> </div>');
+        bodyCalendrier = bodyCalendrier + ('<div class="moisPrecedent"></div>');
         sem++;
     }
     for(i=1;i<=nbJourMois;i++)

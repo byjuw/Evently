@@ -10,7 +10,6 @@ html, body {
 
 nav {
 	background-color: #4a4a4a;
-	/*background: linear-gradient(to bottom, #4a4a4a 75%,#303030 100%);*/
 	margin: 0 !important;
 }
 
@@ -39,15 +38,7 @@ nav ul.nav.navbar-nav li a:hover{
 }
 
 body {
-	/*background-image: radial-gradient(#d17171 0%, #7a3232 100%);*/
 	background: #f1f1f1 !important;
 	background-repeat: no-repeat;
 	height: 100%;
 }
-
-/*.fondblanc {
-	background-color: rgba(255,255,255,0.21);
-	width: 1230px;
-	margin: auto;
-	padding-bottom: 20px;
-}*/
