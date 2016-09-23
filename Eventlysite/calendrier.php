@@ -3,7 +3,7 @@
 		<div id="titreCalendrier">
 			<h1>
         <span class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="index--;calendrier(index);"></span>
-        <span id="moisAn" onclick="index=0;calendrier(index);"></span>
+        <span id="moisAn" onclick="calendrier(0);"></span>
   			<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span>
       </h1>
 		</div>
