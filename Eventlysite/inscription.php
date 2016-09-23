@@ -4,10 +4,9 @@
 	<title>Evently</title>
 </head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/inscription.css">
-<script type="text/javascript" src="js/calendrier.js"></script>
 
 <body>
 <?php 

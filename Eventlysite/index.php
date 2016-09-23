@@ -8,9 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="css/calendrier.css">
 	<title>Evently</title>
 	<script type="text/javascript" src="js/calendrier.js"></script>
-	<script type="text/javascript" src="js/affichemois.js"></script>
-	<script type="text/javascript" src="js/moisG.js"></script>
-	<!-- <script type="text/javascript" src="js/moisD.js"></script> -->
 </head>
 
 <body>
