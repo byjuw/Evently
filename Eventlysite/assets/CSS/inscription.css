@@ -20,3 +20,11 @@ body {
 #bouton {
 	text-align: center;
 }
+
+.errorForm {
+	color: #e41720 !important;
+}
+
+#oblig {
+	font-size: 11px;
+}
