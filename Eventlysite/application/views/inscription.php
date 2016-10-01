@@ -18,7 +18,7 @@
 
 <div id="fondform" class="row">
 <h1>Inscription</h1>
-  <form method="post" action="controllers/validinscription/">
+  <form method="post" action="<?=base_url('controllers/validinscription')?>">
     <div class="form-group">
       <label for="nom">Nom *</label>
       <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" value="<?php echo set_value('nom'); ?>">
@@ -42,7 +42,7 @@
     <div class="form-group">
       <label for="passconf">Confirmer le mot de passe *</label>
       <input type="password" class="form-control" id="passconf" name="passconf" placeholder="Confirmer le mot de passe">
-      <div class="errorForm"><?php echo form_error('confpass'); ?></div>
+      <div class="errorForm"><?php echo form_error('passconf'); ?></div>
     </div>
     <div class="form-group">
       <label for="organisme">Organisme</label>
