@@ -8,7 +8,7 @@ class Validinscription extends CI_Controller {
 
                 $this->load->library('form_validation');
 
-                $this->load->model('membres_model');
+                $this->load->model('model_membres');
 
                 $this->form_validation->set_rules('nom', 'Nom', 'required');
                 $this->form_validation->set_rules('prenom', 'Prénom', 'required');
@@ -26,7 +26,7 @@ class Validinscription extends CI_Controller {
                 }
                 else
                 {
-                        $membres = array(
+                        $membre = array(
                                 'nom'          => $this->input->post('nom'),
                                 'prenom'         => $this->input->post('prenom'),
                                 'password'     => $this->input->post('password'),
@@ -36,7 +36,7 @@ class Validinscription extends CI_Controller {
                                 'telephone'         => $this->input->post('telephone')
                         );
 
-                        $this->membres_model->insert_membres($membres);
+                        $this->model_membres->insert_membre($membre);
 
                         $this->load->view('inscription_reussie');
                 }

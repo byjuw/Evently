@@ -1,6 +1,6 @@
 <?php
 
-class Membres_model extends CI_Model {
+class Model_membres extends CI_Model {
 
 
         public function __construct()
@@ -10,12 +10,12 @@ class Membres_model extends CI_Model {
         }
 
 
-        public function insert_membres($membres)
+        public function insert_membre($membre)
         {
 
                 // $this->db->set('membres', $membres);
                 // $this->db->insert($this->membres);
-                $sql =$this->db->insert('membres', $membres);
+                $sql =$this->db->insert('membres', $membre);
                 // $query = $this->db->query($sql);
 
                 // if ($query === TRUE) {
