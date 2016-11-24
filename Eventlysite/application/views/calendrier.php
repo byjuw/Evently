@@ -164,14 +164,21 @@
             <?php
               $reset = array(
                 'type' => 'reset', 
-                'name' => 'resetform',
+                'name' => 'reset',
                 'class' => 'btn btn-default',
                 'value' => 'Réinitialiser' 
               );
               
               echo form_input($reset);
 
-              echo form_submit('envoi', 'Valider');
+              $envoi = array(
+                'type' => 'submit', 
+                'name' => 'envoi',
+                'class' => 'btn btn-primary',
+                'value' => 'Valider' 
+              );
+
+              echo form_submit($envoi);
 
               echo form_close();
             ?>
