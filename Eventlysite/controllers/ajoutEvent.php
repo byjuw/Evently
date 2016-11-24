@@ -1,6 +1,6 @@
 <?php
 
-class AjoutEvent extends CI_Controller {
+class Ajoutevent extends CI_Controller {
 
         public function index()
         {
@@ -24,7 +24,7 @@ class AjoutEvent extends CI_Controller {
                 }
                 else
                 {
-                        $membres = array(
+                        $event = array(
                                 'nom'                   => $this->input->post('nom'),
                                 'lieu'                  => $this->input->post('lieu'),
                                 'description'           => $this->input->post('description'),

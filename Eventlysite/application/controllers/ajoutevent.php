@@ -20,15 +20,15 @@ class Ajoutevent extends CI_Controller {
 
                 if ($this->form_validation->run() == FALSE)
                 {
-                        $this->load->view('index.php');
+                        $this->load->view('accueil');
                 }
                 else
                 {
-                        $membres = array(
+                        $event = array(
                                 'nom'                   => $this->input->post('nom'),
                                 'lieu'                  => $this->input->post('lieu'),
                                 'description'           => $this->input->post('description'),
-                                'heure'                 => $this->input->post('heure'),
+                                'date_heure'                 => $this->input->post('heure'),
                                 'organisme'             => $this->input->post('organisme'),
                                 'organisateurs'         => $this->input->post('organisateurs'),
                                 'confidentialite'       => $this->input->post('confidentialite')
@@ -38,7 +38,7 @@ class Ajoutevent extends CI_Controller {
 
                         $this->model_events->insert_event($event);
 
-                        $this->load->view('index.php');
+                        $this->load->view('accueil');
                 }
         }
 }

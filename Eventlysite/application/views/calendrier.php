@@ -11,66 +11,173 @@
 		  <script type="text/javascript">calendrier(0)</script>
     </div>
 		<!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <form class="modal-content" method="post" action="<?=base_url('controllers/ajoutevent')?>">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Création d'évènement</h4>
-              </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Création d'évènement</h4>
+          </div>
 
-              <div class="modal-body">
+          <div class="modal-body">
             <div class="form-group">
-              <label for="name">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez le nom de l'évènement">
-            </div>
+              <?php 
+                echo form_open('ajoutevent');
 
-            <div class="form-group">
-              <label for="lieu">Lieu</label>
-                <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrez le lieu">
-            </div>
+                echo form_label('Nom', 'name');
 
-            <div class="form-group">
-              <label for="heure">Heure de l'évènement</label>
-                <input type="text" class="form-control" id="heure" name="heure" placeholder="Exemple: 12:42">
-            </div>
+                $name = array(
+                  'type' => 'text', 
+                  'name' => 'nom', 
+                  'id' => 'nom', 
+                  'class' => 'form-control',
+                  'placeholder' => 'Le nom de l\'évènement', 
+                  'value' => set_value('nom') 
+                );
 
-            <div class="form-group">
-              <label for="description">Description</label>
-              <textarea name="description" class="form-control" rows="3" placeholder="Description de l'évènement"></textarea>
-            </div>
-
-              <div class="form-group">
-              <label for="organisme">Organisme organisateur</label>
-                <input type="text" class="form-control" id="organisme" name="organisme" placeholder="Entrez un nom d'organisme-entreprise organisateur">
+                echo form_input($name);
+              ?>
             </div>
 
             <div class="form-group">
-              <label for="organisateurs">Co-organisateur</label>
-                <input type="text" class="form-control" id="organisateurs" name="organisateurs" placeholder="Co-organisateur">
+              <?php
+                echo form_label('Lieu', 'lieu');
+
+                $lieu = array(
+                  'type' => 'text', 
+                  'name' => 'lieu', 
+                  'id' => 'lieu', 
+                  'class' => 'form-control',
+                  'placeholder' => 'Le lieu de l\'évènement', 
+                  'value' => set_value('lieu') 
+                );
+
+                echo form_input($lieu);
+              ?>
             </div>
 
-            <div class="radio">
-              <label>
-                <input type="radio" name="confidentialite" id="radioPublic" name="Public" value="public" checked>
-            Public
-              </label>
+            <div class="form-group">
+              <?php 
+                echo form_label('Heure de l\'évènement', 'heure');
+
+                $heure = array(
+                  'type' => 'text', 
+                  'name' => 'heure', 
+                  'id' => 'heure', 
+                  'class' => 'form-control',
+                  'placeholder' => 'L\'heure de l\'évènement', 
+                  'value' => set_value('heure') 
+                );
+
+                echo form_input($heure);
+              ?>
             </div>
 
-            <div class="radio">
-              <label>
-                <input type="radio" name="confidentialite" id="radioPrive" name="Prive" value="prive">
-            Privé
-              </label>
+            <div class="form-group">
+              <?php
+                echo form_label('Description', 'description');
+
+                $description = array(
+                  'type' => 'textarea', 
+                  'name' => 'description', 
+                  'id' => 'description', 
+                  'class' => 'form-control',
+                  'placeholder' => 'Description de l\'évènement',
+                  'cols' => '10',
+                  'rows' => '5',
+                  'value' => set_value('description') 
+                );
+
+                echo form_textarea($description);
+              ?>
             </div>
 
-              </div>
-              <div class="modal-footer">
-            <input name="resetform" type="reset" class="btn btn-default" value="Réinitialiser">
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-              </div>
-            </form>
+            <div class="form-group">
+              <?php
+                echo form_label('Organisme organisateur', 'organisme');
+
+                $organisme = array(
+                  'type' => 'text', 
+                  'name' => 'organisme', 
+                  'id' => 'organisme', 
+                  'class' => 'form-control',
+                  'placeholder' => 'L\'organisme qui organise l\'évènement', 
+                  'value' => set_value('organisme') 
+                );
+
+                echo form_input($organisme);                
+              ?>
+            </div>
+
+            <div class="form-group">
+              <?php
+                echo form_label('Co-organisateur', 'organisateurs');
+
+                $organisateurs = array(
+                  'type' => 'text', 
+                  'name' => 'organisateurs', 
+                  'id' => 'organisateurs', 
+                  'class' => 'form-control',
+                  'placeholder' => 'Co-organisateur', 
+                  'value' => set_value('organisateurs') 
+                );
+                
+                echo form_input($organisateurs);
+              ?>
+            </div>
+
+            <tr>
+              <td>
+                <?php echo form_label('Public', 'radiopublic'); ?>                  
+              </td>
+              <td>
+                <?php 
+                  $public = array(
+                    'name'          => 'confidentialite',
+                    'id'            => 'radiopublic',
+                    'value'         => 0,
+                    'checked'       => TRUE
+                  );
+
+                  echo form_radio($public);
+                ?>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <?php echo form_label('Prive', 'radioprive'); ?>
+              </td>
+              <td>
+                <?php 
+                  $prive = array(
+                    'name'          => 'confidentialite',
+                    'id'            => 'radioprive',
+                    'value'         => 1,
+                    'checked'       => False
+                  );
+                  echo form_radio($prive);
+                ?>
+              </td>
+            </tr>
+          </div>
+          <div class="modal-footer">
+            <?php
+              $reset = array(
+                'type' => 'reset', 
+                'name' => 'resetform',
+                'class' => 'btn btn-default',
+                'value' => 'Réinitialiser' 
+              );
+              
+              echo form_input($reset);
+
+              echo form_submit('envoi', 'Valider');
+
+              echo form_close();
+            ?>
           </div>
         </div>
+      </div>
+    </div>
   </div>
 </div>
