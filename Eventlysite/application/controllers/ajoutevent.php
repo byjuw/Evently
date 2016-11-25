@@ -28,7 +28,7 @@ class Ajoutevent extends CI_Controller {
                                 'nom'                   => $this->input->post('nom'),
                                 'lieu'                  => $this->input->post('lieu'),
                                 'description'           => $this->input->post('description'),
-                                'date_heure'                 => $this->input->post('heure'),
+                                'date_heure'            => $this->input->post('heure'),
                                 'organisme'             => $this->input->post('organisme'),
                                 'organisateurs'         => $this->input->post('organisateurs'),
                                 'confidentialite'       => $this->input->post('confidentialite')

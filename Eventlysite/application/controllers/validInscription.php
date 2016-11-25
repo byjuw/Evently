@@ -12,13 +12,13 @@ class Validinscription extends CI_Controller {
 
                 $this->form_validation->set_rules('nom', 'Nom', 'required');
                 $this->form_validation->set_rules('prenom', 'Prénom', 'required');
-                $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+                $this->form_validation->set_rules('mail', 'Email', 'required|valid_email');
                 $this->form_validation->set_rules('password', 'Mot de passe', 'required');
                 $this->form_validation->set_rules('passconf', 'Confirmation du mot de passe', 'required|matches[password]');
 
-                // $this->form_validation->set_rules('organisme', 'Organisme');
-                // $this->form_validation->set_rules('profession', 'Profession');
-                // $this->form_validation->set_rules('telephone', 'Téléphone');
+                $this->form_validation->set_rules('organisme', 'Organisme');
+                $this->form_validation->set_rules('profession', 'Profession');
+                $this->form_validation->set_rules('telephone', 'Téléphone');
 
                 if ($this->form_validation->run() == FALSE)
                 {
@@ -31,7 +31,7 @@ class Validinscription extends CI_Controller {
                                 'prenom'         => $this->input->post('prenom'),
                                 'password'     => $this->input->post('password'),
                                 'organisme'         => $this->input->post('organisme'),
-                                'email'         => $this->input->post('email'),
+                                'mail'         => $this->input->post('mail'),
                                 'profession'         => $this->input->post('profession'),
                                 'telephone'         => $this->input->post('telephone')
                         );

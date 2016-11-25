@@ -30,9 +30,9 @@
       <div class="errorForm"><?php echo form_error('prenom'); ?></div>
     </div>
     <div class="form-group">
-      <label for="email">Email *</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
-      <div class="errorForm"><?php echo form_error('email'); ?></div>
+      <label for="mail">Email *</label>
+      <input type="email" class="form-control" id="mail" name="mail" placeholder="Email" value="<?php echo set_value('email'); ?>">
+      <div class="errorForm"><?php echo form_error('mail'); ?></div>
     </div>
     <div class="form-group">
       <label for="password">Mot de passe *</label>
