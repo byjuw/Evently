@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Evently</title>
+
+    <!-- Bootstrap -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/vitrine.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+	<div class="container-fluid" id="banniere">
+    <img src="assets/img/banniere.png" alt="Bannière">
+	</div>
+  <div class="container" id="description">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro magni fuga est. Voluptates et suscipit est eligendi molestias voluptate incidunt excepturi ipsam, velit quis. Eligendi fugiat sed obcaecati odio adipisci!</p>
+  </div>
+    <div class="container-fluid" id="calendrier">
+      <img src="assets/img/calendrier.jpg" alt="Calendrier">
+    </div>
+    
+    <div class="container" id="form">
+      <form method="post" action="message.php">
+
+        <div class="form-group">
+          <label for="nom">Nom : </label>
+          <input type="text" class="form-control" name="nom" id="nom" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="nom">Prenom : </label>
+          <input type="text" class="form-control" name="nom" id="nom" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="email">E-mail : </label>
+          <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message : </label>
+          <textarea rows="10" cols="50" class="form-control" name="message" id="message" required></textarea>
+        </div>
+
+        <div class="form-group" id="bouton">
+          <input type="reset" class="btn btn-default" name="reset" id="reset" value="Réinitialiser">
+          <input type="submit" class="btn btn-default" name="envoi" id="valider" value="Valider">
+        </div>
+      </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

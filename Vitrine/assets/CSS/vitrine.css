@@ -1,0 +1,35 @@
+html, body {
+	background-color: #d6d6d6;
+}
+
+#banniere {
+	text-align: center;
+}
+
+#banniere img {
+	width: 900px;
+}
+
+#description {
+	background-color: #dfdfdf;
+	padding: 20px;
+}
+
+#calendrier {
+	text-align: center;
+	margin: 50px 0;
+}
+
+#calendrier img {
+	width: 900px;
+}
+
+#form {
+	width: 450px;
+	background-color: #dfdfdf;
+	padding: 20px;
+}
+
+#bouton {
+	text-align: center;
+}
