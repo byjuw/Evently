@@ -5,20 +5,20 @@
 
 	<title>Evently</title>
 
-  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/inscription.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/inscription.css">
 </head>
 
 <body>
 <?php 
 	include("menu.php");
-  echo form_open('validinscription');
+  echo form_open('inscription/create');
 ?>
 
 <div id="fondform" class="row">
 <h1>Inscription</h1>
-  <form method="post" action="<?=base_url('controllers/validinscription')?>">
+  <form method="post" action="<?php echo base_url(); ?>inscription/create">
     <div class="form-group">
       <label for="nom">Nom *</label>
       <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" value="<?php echo set_value('nom'); ?>">
@@ -26,13 +26,13 @@
     </div>
     <div class="form-group">
       <label for="prenom">Prénom *</label>
-      <input type="name" class="form-control" id="prenom" name="prenom" placeholder="Prénom" value="<?php echo set_value('prenom'); ?>">
+      <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Prénom" value="<?php echo set_value('prenom'); ?>">
       <div class="errorForm"><?php echo form_error('prenom'); ?></div>
     </div>
     <div class="form-group">
-      <label for="mail">Email *</label>
-      <input type="email" class="form-control" id="mail" name="mail" placeholder="Email" value="<?php echo set_value('email'); ?>">
-      <div class="errorForm"><?php echo form_error('mail'); ?></div>
+      <label for="email">Email *</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo set_value('email'); ?>">
+      <div class="errorForm"><?php echo form_error('email'); ?></div>
     </div>
     <div class="form-group">
       <label for="password">Mot de passe *</label>
