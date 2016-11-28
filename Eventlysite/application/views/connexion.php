@@ -4,12 +4,13 @@
   <title>Evently</title>
 </head>
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="assets/css/main.css">
-<link rel="stylesheet" type="text/css" href="assets/css/inscription.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/main.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/inscription.css">
 <body>
 <?php 
   include("menu.php");
+  echo form_open('connexion');
 ?>
 
 <div id="fondform">
