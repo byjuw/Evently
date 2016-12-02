@@ -7,12 +7,13 @@ html, body {
 }
 
 #banniere img {
-	width: 900px;
+	/*width: 900px;*/
 }
 
 #description {
 	background-color: #dfdfdf;
 	padding: 20px;
+	box-shadow: 10px 10px 20px black;
 }
 
 #calendrier {
@@ -25,9 +26,10 @@ html, body {
 }
 
 #form {
-	width: 450px;
+	width: 900px;
 	background-color: #dfdfdf;
 	padding: 20px;
+	box-shadow: 10px 10px 20px black;
 }
 
 #bouton {
