@@ -13,12 +13,11 @@
 <body>
 <?php 
 	include("menu.php");
-  echo form_open('inscription/create');
+  echo form_open('user/create');
 ?>
 
 <div id="fondform" class="row">
 <h1>Inscription</h1>
-  <form method="post" action="<?php echo base_url(); ?>inscription/create">
     <div class="form-group">
       <label for="nom">Nom *</label>
       <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" value="<?php echo set_value('nom'); ?>">
@@ -61,7 +60,6 @@
       <button type="reset" class="btn btn-default">Réinitialiser</button>
       <button type="submit" class="btn btn-default">Envoyer</button>
     </div>
-  </form>
   <?php  echo form_close(); ?>
 </div>
 </body>

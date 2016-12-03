@@ -10,41 +10,31 @@
 <body>
 <?php 
   include("menu.php");
-  echo form_open('connexion');
+  echo form_open('user/login');
 ?>
-
-<div id="fondform">
-
-<h1>Connexion</h1>
-
-<form class="form-horizontal">
+  <div id="fondform" class="row">
+  <h1>Connexion</h1>
   <div class="form-group">
-    <label for="email" class="col-sm-2 control-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="email" placeholder="Adresse Email">
-    </div>
+    <label for="email">Email</label>
+    <input type="email" class="form-control" name="email" id="email" placeholder="Adresse Email">
   </div>
   <div class="form-group">
-    <label for="password" class="col-sm-2 control-label">Mot de passe</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="password" placeholder="Entrer mot de passe">
-    </div>
+    <label for="password">Mot de passe</label>
+    <input type="password" class="form-control" name="password" id="password" placeholder="Entrer mot de passe">
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
       <div class="checkbox">
         <label>
           <input type="checkbox"> Se souvenir de moi
         </label>
       </div>
-    </div>
   </div>
   <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Valider</button>
-    </div>
   </div>
-</form>
+<?php
+  echo form_close();
+?>
 </div>
 </body>
 </html>
