@@ -4,7 +4,7 @@ class Ajoutevent extends CI_Controller {
 
         public function index()
         {
-                $this->load->helper(array('form', 'url', 'date'));
+                $this->load->helper(array('form', 'date'));
 
                 $this->load->library('form_validation');
 
@@ -32,8 +32,6 @@ class Ajoutevent extends CI_Controller {
                                 'organisme'             => $this->input->post('organisme'),
                                 'organisateurs'         => $this->input->post('organisateurs'),
                                 'confidentialite'       => $this->input->post('confidentialite')
-                                // 'date'                  => current_date(),   ????
-                                // 'createur'              => current_user(),   ????
                         );
 
                         $this->model_events->insert_event($event);
