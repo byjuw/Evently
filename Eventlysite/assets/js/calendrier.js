@@ -1,8 +1,8 @@
 var index = 0;
+var event = "lol";
 
-function calendrier(index) // index = paramètre pour la navigation de mois en mois dans le calendrier.
+function calendrier(index, event) // index = paramètre pour la navigation de mois en mois dans le calendrier.
 {
-
     var date = new Date();
     var jour = date.getDate(); //Récupérer la date Jour
     var moi = date.getMonth(); //Récupérer la date Mois
@@ -51,7 +51,7 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
         }
         if(jour==i && index==0)
         {
-            bodyCalendrier = bodyCalendrier + ('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
+            bodyCalendrier = bodyCalendrier + ('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee">' + event + '</div></div>');
         }
         else
         {

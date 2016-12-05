@@ -21,7 +21,7 @@ class User extends CI_Controller {
 			$this->db->where('email', $email);
 			$query = $this->db->get('users');
 			$user = $query->result();
-			$id = $this->model_users->get_userID($mail);
+			$id = $this->model_users->get_userID($email);
 
 			if(count($user) < 1){
 				//Indiquer une erreur d'adresse email inexistante
