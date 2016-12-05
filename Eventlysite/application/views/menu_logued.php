@@ -11,8 +11,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    <ul class="nav navbar-nav navbar-right">
-		    <?php var_dump($_SESSION['id']);?>
-	    		<li><a href="#"><?php echo $_SESSION['id']; ?></a></li>
+	    		<li><a href="#"><?php echo $_SESSION['email']; ?></a></li>
 	    		<li><a href="<?php echo base_url(); ?>user/logout">Déconnexion</a></li>
 	    	</ul>
 	    </div>
