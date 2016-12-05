@@ -1,7 +1,4 @@
-      <?php var_dump($events); 
-      $event = $events;
-      var_dump($event);
-      ?>
+
 
 <div class="container">
   <div id="calendrier">
@@ -13,8 +10,7 @@
       </h1>
     </div>
     <div id="bodyCalendrier">
-    <?php var_dump($event); ?>
-		  <script type="text/javascript">setTimeout(function(){ calendrier(0, <?php echo $_SESSION['id']; ?>); }, 1000)</script>
+		  <script type="text/javascript">calendrier(0);</script>
     </div>
 		<!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

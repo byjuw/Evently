@@ -10,12 +10,19 @@ class Home extends CI_Controller {
 		$this->load->model('model_events');
 
 		$event = $this->model_events->load_event();
-
 		
 		$data = [
 			"event" => $event
 		];
 
 		$this->load->view('home', $data);
+	}
+
+	public function ajax(){
+		$this->load->model('model_events');
+
+		$event = $this->model_events->load_event();
+		echo $event;
+
 	}
 }
