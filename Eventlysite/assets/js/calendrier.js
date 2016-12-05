@@ -1,5 +1,5 @@
 var index = 0;
-var event = "lol";
+var event = 0;
 
 function calendrier(index, event) // index = paramètre pour la navigation de mois en mois dans le calendrier.
 {

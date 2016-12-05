@@ -1,14 +1,20 @@
+      <?php var_dump($events); 
+      $event = $events;
+      var_dump($event);
+      ?>
+
 <div class="container">
-	<div id="calendrier">
-		<div id="titreCalendrier">
-			<h1>
+  <div id="calendrier">
+    <div id="titreCalendrier">
+      <h1>
         <span class="glyphicon glyphicon-arrow-left navMois" aria-hidden="true" onclick="index--;calendrier(index);"></span>
         <span id="moisAn" onclick="index=0;calendrier(0);"></span>
-  			<span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span>
+        <span class="glyphicon glyphicon-arrow-right navMois" aria-hidden="true" onclick="index++;calendrier(index);"></span>
       </h1>
-		</div>
+    </div>
     <div id="bodyCalendrier">
-		  <script type="text/javascript">calendrier(0)</script>
+    <?php var_dump($event); ?>
+		  <script type="text/javascript">setTimeout(function(){ calendrier(0, <?php echo $_SESSION['id']; ?>); }, 1000)</script>
     </div>
 		<!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
