@@ -12,9 +12,8 @@
 
 <body>
 	<?php 
-		// include("menu.php");
+		include("menu.php");
 		include("calendrier.php");
-		//var_dump($event);
 		//var_dump($_SESSION['id']);
 	?>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
