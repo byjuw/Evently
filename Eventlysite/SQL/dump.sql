@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 05 Décembre 2016 à 08:20
+-- Généré le :  Lun 05 Décembre 2016 à 08:22
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -52,7 +52,8 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('61eeb7dbf6f1e3da313a3735c96fad6961306e2f', '::1', 1480426674, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303432363637343b),
 ('c4df1293a1b708cdd7ca7f60da533183ae9df71f', '::1', 1480668525, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303636383532353b),
 ('0eb298224f198e74f405a01755bffe1adbd0d411', '::1', 1480669325, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303636393332313b),
-('083243c53c6232f6f9a4fb368f2d29539b9579a0', '::1', 1480925794, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303932353738343b);
+('083243c53c6232f6f9a4fb368f2d29539b9579a0', '::1', 1480925794, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303932353738343b),
+('efc771060ca7817b0d8196598f60ff498a96d890', '::1', 1480926123, 0x5f5f63695f6c6173745f726567656e65726174657c693a313438303932363131393b);
 
 -- --------------------------------------------------------
 
@@ -98,21 +99,14 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `nom` varchar(60) NOT NULL,
   `prenom` varchar(60) NOT NULL,
-  `password` varchar(30) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `date_inscritpion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `organisme` varchar(30) NOT NULL,
-  `mail` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   `groupe` int(11) NOT NULL DEFAULT '1',
   `profession` varchar(60) NOT NULL,
   `telephone` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Contenu de la table `users`
---
-
-INSERT INTO `users` (`id`, `nom`, `prenom`, `password`, `date_inscritpion`, `organisme`, `mail`, `groupe`, `profession`, `telephone`) VALUES
-(1, 'Lichtle', 'David', '', '2016-08-26 15:37:06', 'Mulhouse Startups', 'david.lichtle@nova-beez.com', 2, '', 42);
 
 -- --------------------------------------------------------
 
@@ -197,7 +191,7 @@ ALTER TABLE `organismes`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `users_events`
 --
