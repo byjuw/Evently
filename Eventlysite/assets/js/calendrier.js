@@ -89,7 +89,6 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
 
         }
     };
-    xhttp.open("GET", "http://localhost:8888/evently/eventlysite/index.php/home/ajax/", true);
     xhttp.send();
 
     
