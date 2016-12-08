@@ -10,6 +10,9 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
         if (this.readyState == 4 && this.status == 200) {
             console.log(this);
             var ev=this.responseText;
+
+            formatage(ev);
+
             var date = new Date();
             var jour = date.getDate(); //Récupérer la date Jour
             var moi = date.getMonth(); //Récupérer la date Mois
@@ -93,4 +96,67 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
     xhttp.send();
     
     return true;
+}
+
+
+function formatage(str) {
+
+    var test = str.split("|");
+    console.log(test)
+    for (i in test){
+        var test1 = test[i].split(";");
+        console.log(test1);
+    }
+;
+
+    prov = "";
+    provD = "";
+    champ = 0;
+    champD = 0;
+    tabNom = [];
+    tabDate = [];
+    tabHeure = [];
+    tabDescription = [];
+    for (var i = 0, len = str.length; i < len; i++) { //Analyse chaque caractère
+        if(str[i] != ";" && str[i] != "|") {
+            prov += str[i];
+        }
+        else{
+            if(champ == 0){
+                tabNom += prov;
+                prov = "";
+                champ++;
+            }
+            else if(champ == 1){
+                for (var j = 0, len = prov.length; j < len; j++) {
+                    if(prov[j] != " ") {
+                        provD += prov[j];
+                    }
+                    else{
+                        if(champD == 0){
+                            tabDate += provD;
+                            provD = "";
+                            champD++;
+                        }
+                    }
+                }
+                tabHeure += provD;
+                provD = "";
+                champD = 0;
+                prov = "";
+                champ++;
+                console.log(champ);
+            }
+            else{
+                console.log(prov);
+                tabDescription += prov;
+                prov = "";
+                champ = 0;
+            }
+        }
+    }
+    console.log(tabNom);
+    console.log(tabDate);
+    console.log(tabHeure);
+    console.log(tabDescription);
 }

@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div id="calendrier">
     <div id="titreCalendrier">
@@ -10,7 +8,8 @@
       </h1>
     </div>
     <div id="bodyCalendrier">
-		  <script type="text/javascript">calendrier(0);</script>
+    <?php var_dump($event); ?>
+      <script type="text/javascript">calendrier(0);</script>
     </div>
 		<!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

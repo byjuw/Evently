@@ -2,35 +2,30 @@
 
 class Model_events extends CI_Model {
 
-        public function __construct()
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function insert_event($event)
+    {
+        $sql = $this->db->insert('events', $event);
+    }
+
+    public function load_event()
+    {
+        $this->db->join('events', 'users_events.id_event = events.id');
+        
+        $query = $this->db->get_where('users_events', array('id_user' => $_SESSION['id']));
+
+        $events = [];
+        foreach ($query->result() as $row)
         {
-            parent::__construct();
+            $event['nom'] = $row->nom;
+            $event['date_heure'] = $row->date_heure;
+        	$event['description'] = $row->description;
+            $events[] = $event;
         }
-
-        public function insert_event($event)
-        {
-            $sql = $this->db->insert('events', $event);
-        }
-
-        public function load_event()
-        {
-        	$this->db->where('id_user', $_SESSION['id']);
-            $query = $this->db->get('users_events');
-
-           	$id_events = 0;
-            foreach ($query->result() as $row)
-            {
-            	$id_events = $row->id_event;
-            }
-
-            $this->db->where('id', $id_events);
-            $query = $this->db->get('events');
-
-            $event = 0;
-            foreach ($query->result() as $row)
-            {
-            	$event = $row->nom;
-            }
-        	return $event;
-        }
+    	return $events;
+    }
 }

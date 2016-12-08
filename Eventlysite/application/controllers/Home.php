@@ -26,8 +26,14 @@ class Home extends CI_Controller {
 	public function ajax(){
 		$this->load->model('model_events');
 
-		$event = $this->model_events->load_event();
-		echo $event;
-
+		$events = $this->model_events->load_event();
+		$var = "";
+		foreach($events as $result) {
+			$var .= $result['nom'].";";
+			$var .= $result['date_heure'].";";
+			$var .= $result['description']."|";
+		}
+		$var = rtrim($var, "|");
+		echo $var;
 	}
 }

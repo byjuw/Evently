@@ -36,7 +36,7 @@ class Ajoutevent extends CI_Controller {
 
                         $this->model_events->insert_event($event);
 
-                        $this->load->view('accueil');
+                        $this->load->view('home');
                 }
         }
 }
