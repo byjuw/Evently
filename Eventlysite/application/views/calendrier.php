@@ -8,7 +8,6 @@
       </h1>
     </div>
     <div id="bodyCalendrier">
-    <?php var_dump($event); ?>
       <script type="text/javascript">calendrier(0);</script>
     </div>
 		<!-- Modal -->
@@ -59,14 +58,24 @@
 
             <div class="form-group">
               <?php 
+                echo form_label('Date de l\'évènement', 'date');
+
+                $date = array(
+                  'type' => 'date', 
+                  'name' => 'date', 
+                  'id' => 'date', 
+                  'class' => 'form-control',
+                  'value' => set_value('date') 
+                );
+                echo form_input($date);
+
                 echo form_label('Heure de l\'évènement', 'heure');
 
                 $heure = array(
-                  'type' => 'text', 
+                  'type' => 'time', 
                   'name' => 'heure', 
                   'id' => 'heure', 
                   'class' => 'form-control',
-                  'placeholder' => 'L\'heure de l\'évènement', 
                   'value' => set_value('heure') 
                 );
 

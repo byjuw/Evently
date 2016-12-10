@@ -30,7 +30,8 @@ class Home extends CI_Controller {
 		$var = "";
 		foreach($events as $result) {
 			$var .= $result['nom'].";";
-			$var .= $result['date_heure'].";";
+			$var .= $result['date'].";";
+			$var .= $result['heure'].";";
 			$var .= $result['description']."|";
 		}
 		$var = rtrim($var, "|");

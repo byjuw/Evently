@@ -13,6 +13,7 @@ class Ajoutevent extends CI_Controller {
                 $this->form_validation->set_rules('nom', 'Nom de l\'évènement', 'required');
                 $this->form_validation->set_rules('lieu', 'Lieu de l\'évènement', 'required');
                 $this->form_validation->set_rules('description', 'Description de l\'évènement', 'required');
+                $this->form_validation->set_rules('date', 'Date de l\'évènement', 'required');
                 $this->form_validation->set_rules('heure', 'Heure de l\'évènement', 'required');
                 $this->form_validation->set_rules('organisme', 'Organisme organisateur', 'required');
                 $this->form_validation->set_rules('organisateurs', 'Organisateurs de l\'évènement', 'required');
@@ -20,7 +21,7 @@ class Ajoutevent extends CI_Controller {
 
                 if ($this->form_validation->run() == FALSE)
                 {
-                        $this->load->view('accueil');
+                        $this->load->view('home');
                 }
                 else
                 {
@@ -28,7 +29,8 @@ class Ajoutevent extends CI_Controller {
                                 'nom'                   => $this->input->post('nom'),
                                 'lieu'                  => $this->input->post('lieu'),
                                 'description'           => $this->input->post('description'),
-                                'date_heure'            => $this->input->post('heure'),
+                                'date'                  => $this->input->post('date'),
+                                'heure'                 => $this->input->post('heure'),
                                 'organisme'             => $this->input->post('organisme'),
                                 'organisateurs'         => $this->input->post('organisateurs'),
                                 'confidentialite'       => $this->input->post('confidentialite')

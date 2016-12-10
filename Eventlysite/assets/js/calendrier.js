@@ -1,17 +1,44 @@
 var index = 0;
-var event = 0;
 
 function calendrier(index) // index = paramètre pour la navigation de mois en mois dans le calendrier.
 {
-    
-
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
+    var xhttp = new XMLHttpRequest(); // Ajax
+    xhttp.onreadystatechange = function() { // Ajax
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this);
-            var ev=this.responseText;
+            var event=this.responseText; // Récupération str Ajax
 
-            formatage(ev);
+            var strEvent = event.split("|"); // Formatage, on sépare les différents events
+
+            var tabNom = [];  // Tab contenant éléments des events
+            var tabAn = []; // Tab contenant éléments des events
+            var tabMois = []; // Tab contenant éléments des events
+            var tabJour = []; // Tab contenant éléments des events
+            var tabHeure = []; // Tab contenant éléments des events
+            var tabDescription = []; // Tab contenant éléments des events
+
+            if(event.length > 0) // Si event existe
+                for (i in strEvent){ // Boucle on traite chaque event
+                    var strSplit = strEvent[i].split(";"); // Formatage, on sépare les différents éléments de chaque event
+                    for (c = 0; c <= strSplit.length; c++){ // Pour chaque élément d'event
+                        switch(c){
+                            case 0:
+                                tabNom.push(strSplit[c]); // On push dans les tableaux 
+                                break;
+                            case 1:
+                                var dateSplit = strSplit[c].split("-"); // On découpe la date pour récupérer An - mois - jour
+                                tabAn.push(dateSplit[0]); // On push dans les tableaux 
+                                tabMois.push(dateSplit[1]); // On push dans les tableaux 
+                                tabJour.push(dateSplit[2]); // On push dans les tableaux 
+                                break;
+                            case 2:
+                                tabHeure.push(strSplit[c]); // On push dans les tableaux 
+                                break;
+                            case 3:
+                                tabDescription.push(strSplit[c]); // On push dans les tableaux 
+                                break;
+                        }
+                    }
+                }
 
             var date = new Date();
             var jour = date.getDate(); //Récupérer la date Jour
@@ -48,29 +75,46 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
             {
                 if(i==2)
                 {
-                    bodyCalendrier = bodyCalendrier + ('<div class="row semaine">');
+                    bodyCalendrier += ('<div class="row semaine">');
                 }
-                bodyCalendrier = bodyCalendrier + ('<div class="moisPrecedent"></div>');
+                bodyCalendrier += ('<div class="moisPrecedent"></div>');
                 sem++;
             }
             for(i=1;i<=nbJourMois;i++)
             {
                 if(sem==0)
                 {
-                    bodyCalendrier = bodyCalendrier + ('<div class="row semaine">');
+                    bodyCalendrier += ('<div class="row semaine">');
                 }
                 if(jour==i && index==0)
                 {
-                    bodyCalendrier = bodyCalendrier + ('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee">' + ev + '</div></div>');
+                    bodyCalendrier += ('<div class="jour"><span id="aujour">'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal" value="' + i + '">+</a></span><div class="journee">');
+                    
+                    for(j = 0; j < tabNom.length; j++)
+                        if(tabJour[j] == i && tabMois[j] == (moi+1) && tabAn[j] == annee) 
+                        {
+                            bodyCalendrier += ('<strong>&nbsp;&nbsp;'+ tabNom[j] + ': </strong>' + tabHeure[j]);
+                        }
+
+                    bodyCalendrier += ('</div></div>');
                 }
                 else
                 {
-                    bodyCalendrier = bodyCalendrier + ('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee"></div></div>');
+                    bodyCalendrier += ('<div class="jour"><span>'+ jours_semaine[(cpt_j-1)%7] + ' ' + i +'<a href="#" class="ajouterEvenement" data-toggle="modal" data-target="#myModal">+</a></span><div class="journee">');
+                    
+                    for(j = 0; j < tabNom.length; j++)
+                        if(tabJour[j] == i && tabMois[j] == (moi+1) && tabAn[j] == annee) 
+                        {
+                            bodyCalendrier += ('<strong>&nbsp;&nbsp;'+ tabNom[j] + ': </strong>' + tabHeure[j]);
+                        }
+
+                    bodyCalendrier += ('</div></div>');
+
                 }
                 sem++;  
                 if(sem==7)
                 {
-                    bodyCalendrier = bodyCalendrier + ('</div>');
+                    bodyCalendrier += ('</div>');
                     sem=0;
                 }
             cpt_j++;
@@ -80,7 +124,7 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
                 sem++;
                 if(sem==7)
                 {
-                    bodyCalendrier = bodyCalendrier + ('</div>');
+                    bodyCalendrier += ('</div>');
                     sem=0;
                 }
             }
@@ -92,71 +136,8 @@ function calendrier(index) // index = paramètre pour la navigation de mois en m
 
         }
     };
-    xhttp.open("GET", "http://localhost/evently/eventlysite/home/ajax/", true);
-    xhttp.send();
+    xhttp.open("GET", "http://localhost/evently/eventlysite/home/ajax/", true); // Aajx
+    xhttp.send(); // Aajx
     
     return true;
-}
-
-
-function formatage(str) {
-
-    var test = str.split("|");
-    console.log(test)
-    for (i in test){
-        var test1 = test[i].split(";");
-        console.log(test1);
-    }
-;
-
-    prov = "";
-    provD = "";
-    champ = 0;
-    champD = 0;
-    tabNom = [];
-    tabDate = [];
-    tabHeure = [];
-    tabDescription = [];
-    for (var i = 0, len = str.length; i < len; i++) { //Analyse chaque caractère
-        if(str[i] != ";" && str[i] != "|") {
-            prov += str[i];
-        }
-        else{
-            if(champ == 0){
-                tabNom += prov;
-                prov = "";
-                champ++;
-            }
-            else if(champ == 1){
-                for (var j = 0, len = prov.length; j < len; j++) {
-                    if(prov[j] != " ") {
-                        provD += prov[j];
-                    }
-                    else{
-                        if(champD == 0){
-                            tabDate += provD;
-                            provD = "";
-                            champD++;
-                        }
-                    }
-                }
-                tabHeure += provD;
-                provD = "";
-                champD = 0;
-                prov = "";
-                champ++;
-                console.log(champ);
-            }
-            else{
-                console.log(prov);
-                tabDescription += prov;
-                prov = "";
-                champ = 0;
-            }
-        }
-    }
-    console.log(tabNom);
-    console.log(tabDate);
-    console.log(tabHeure);
-    console.log(tabDescription);
 }

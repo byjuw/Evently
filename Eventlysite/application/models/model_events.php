@@ -9,7 +9,19 @@ class Model_events extends CI_Model {
 
     public function insert_event($event)
     {
-        $sql = $this->db->insert('events', $event);
+        $this->db->insert('events', $event);
+        $query = $this->db->get('events', 'id');
+
+        foreach ($query->result() as $row)
+        {
+            $id = $row->id;
+        }
+
+        $user_event = [
+            'id_user'   => $_SESSION['id'],
+            'id_event'  => $id
+        ];
+        $this->db->insert('users_events', $user_event);
     }
 
     public function load_event()
@@ -22,7 +34,8 @@ class Model_events extends CI_Model {
         foreach ($query->result() as $row)
         {
             $event['nom'] = $row->nom;
-            $event['date_heure'] = $row->date_heure;
+            $event['date'] = $row->date;
+            $event['heure'] = $row->heure;
         	$event['description'] = $row->description;
             $events[] = $event;
         }
