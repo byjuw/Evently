@@ -16,7 +16,7 @@ class Ajoutevent extends CI_Controller {
                 $this->form_validation->set_rules('date', 'Date de l\'évènement', 'required');
                 $this->form_validation->set_rules('heure', 'Heure de l\'évènement', 'required');
                 $this->form_validation->set_rules('organisme', 'Organisme organisateur', 'required');
-                $this->form_validation->set_rules('organisateurs', 'Organisateurs de l\'évènement', 'required');
+                $this->form_validation->set_rules('organisateurs', 'Organisateurs de l\'évènement');
                 $this->form_validation->set_rules('confidentialite', 'Confidentialité de l\'évènement', 'required');
 
                 if ($this->form_validation->run() == FALSE)
