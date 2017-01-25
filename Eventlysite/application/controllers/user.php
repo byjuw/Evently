@@ -5,7 +5,7 @@ class User extends CI_Controller {
 
 	public function login()
 	{
-		$this->load->helper(array('security', 'form'));
+		$this->load->helper(array('security', 'form', 'string'));
 		$this->load->model('model_users');
 		
 		$data = [
@@ -14,6 +14,7 @@ class User extends CI_Controller {
 
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
+		$re = $this->input->post('remember');
 		
 
 		if($email != null && $password != null){
@@ -52,6 +53,19 @@ class User extends CI_Controller {
 
 
 			$this->session->set_userdata((array) $session);
+
+			if($re){
+
+				$random_string = random_string('alnum', 16);
+
+				set_cookie('remember', $random_string, '1209600', 'localhost', '/');
+
+				$this->model_users->remember_me($id, $random_string);
+			} else {
+				$this->model_users->no_remember_me($id);
+			}
+
+
 			redirect('/');
 			return;
 
@@ -67,6 +81,7 @@ class User extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
+		delete_cookie('remember');
 		redirect('/');
 	}
 

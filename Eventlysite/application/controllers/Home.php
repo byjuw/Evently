@@ -7,7 +7,7 @@ class Home extends CI_Controller {
 	{
   		$this->load->library('form_validation');
   		$this->load->helper('form');
-		$this->load->model('model_events');
+		$this->load->model(array('model_events', 'model_users'));
 
 		if(isset($_SESSION['id'])) {
 			$event = $this->model_events->load_event();
@@ -17,6 +17,27 @@ class Home extends CI_Controller {
 			];
 
 			$this->load->view('home', $data);
+		}
+		else if(get_cookie('remember')){
+			$string = get_cookie('remember');
+			$user = $this->model_users->load_remember($string);
+			$session = [
+				'logged_in' => true,
+				'email'		=> $user['email'],
+				'id'		=> $user['id']
+			];
+
+			$this->session->set_userdata((array) $session);
+
+
+			$event = $this->model_events->load_event();
+			
+			$data = [
+				"event" => $event
+			];
+
+			$this->load->view('home', $data);
+
 		}
 		else {
 			$this->load->view('login');
